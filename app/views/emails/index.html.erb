@@ -13,14 +13,15 @@
       <h4>Liste des Emails</h4>
         <% @emails.each do |email| %>
           
-        <li id="email-content">
-        <a href="<%= email_path(email.id) %>", remote: true>"<%= email.object %>"</a></li>   
+          <li id="email-content">
+            <a href="<%= email_path(email.id) %>", remote: true>"<%= email.object %>"</a>
+          </li>   
         <% end %>
       </ul>
     </div>
     <div class="col-4">
       <h4>Email sélectionné</h4>
-      <div id= "email-content"></div>
+      <div id= "email-contenttttt"></div>
     </div>
   </div>
 </div>
