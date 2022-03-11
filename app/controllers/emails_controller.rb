@@ -7,7 +7,7 @@ class EmailsController < ApplicationController
     @email = Email.create(object: Faker::Lorem.sentence, body: Faker::Lorem.paragraphs)
     
     respond_to do |format|
-      format.html { redirect_to emails_path }
+      format.html { redirect_to root_path }
       format.js {}
     end
   end
@@ -22,9 +22,9 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:id]) 
     
 
-    #respond_to do |format|
-     # format.html {redirect_to root_path}
-      #format.js {}
-    #end
+    respond_to do |format|
+      format.html {redirect_to email_path}
+      format.js {}
+    end
   end
 end
