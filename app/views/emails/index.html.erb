@@ -4,6 +4,7 @@
   <%= form_tag(emails_path, method: :post, class: "form", remote: true) do %>
     <%= submit_tag 'Générer un mail', :name => 'commit'%>
   <% end %>
+  <a href="<%= emails_path %>" data-method="post" data-remote="true">Générer un mailssss</a>
 </div></br>
 
 <div class="container">
@@ -14,7 +15,7 @@
         <% @emails.each do |email| %>
           
           <li id="email-content">
-            <a href="<%= email_path(email.id) %>", remote: true>"<%= email.object %>"</a>
+            <a href="<%= email_path(email.id) %>"  data-remote="true">"<%= email.object %>"</a>
           </li>   
         <% end %>
       </ul>

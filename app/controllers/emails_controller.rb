@@ -4,11 +4,11 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.create(object: Faker::Lorem.sentence, body: Faker::Lorem.paragraphs)
-    
+    @email = Email.new('object' => Faker::Lorem.sentence, 'body' => Faker::Lorem.paragraph)
+    @email.save
     respond_to do |format|
       format.html { redirect_to root_path }
-      format.js {}
+      format.js { }
     end
   end
 =begin
