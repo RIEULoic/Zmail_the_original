@@ -1,0 +1,28 @@
+<h1>Zmail</h1></br>
+
+<div class="form">
+  <%= form_tag(emails_path, method: :post, class: "form", remote: true) do %>
+    <%= submit_tag 'Générer un mail', :name => 'commit'%>
+  <% end %>
+</div></br>
+
+<div class="container">
+  <div class="row justify-content-evenly">
+    <div class="col-4">
+      <ul id="email-object">
+      <h4>Liste des Emails</h4>
+        <% @emails.each do |email| %>
+          
+        <li id="email-content">
+        <a href="<%= email_path(email.id) %>", remote: true>"<%= email.object %>"</a></li>   
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-4">
+      <h4>Email sélectionné</h4>
+      <div id= "email-content"></div>
+    </div>
+  </div>
+</div>
+
+
